@@ -1,25 +1,18 @@
 import React from "react";
 import * as Styled from "./styled";
 import Image from "next/image";
+import { ProductCardProps } from "@/types";
 
-export interface ProductCardProps {
-  id: number;
-  name: string;
-  brand: string;
-  description: string;
-  photo: string;
-  price: string;
-}
 
-function ProductCard({name, brand, description, photo, price}: ProductCardProps) {
+
+
+function ProductCard({ product, addToCart }: ProductCardProps) {
   return (
     <Styled.CardContainer>
       <Styled.CardProductContainer>
         <Styled.CardProductImgContainer>
           <Image
-            src={
-              photo
-            }
+            src={product.photo}
             alt={"Imagem do produto"}
             width={130}
             height={140}
@@ -27,22 +20,25 @@ function ProductCard({name, brand, description, photo, price}: ProductCardProps)
         </Styled.CardProductImgContainer>
         <Styled.CardProductInfoContainer>
           <Styled.CardProductTitle>
-            {`${brand} ${name}`}
+            {`${product.brand} ${product.name}`}
           </Styled.CardProductTitle>
           <Styled.CardProductPrice>
             {" "}
-            <p>R${price}</p>{" "}
+            <p>R${product.price}</p>{" "}
           </Styled.CardProductPrice>
         </Styled.CardProductInfoContainer>
         <Styled.CardProductDescription>
-          <p>
-            {description}
-          </p>
+          <p>{product.description}</p>
         </Styled.CardProductDescription>
       </Styled.CardProductContainer>
-      <Styled.CardShopButton>
+      <Styled.CardShopButton onClick={() => addToCart(product)}>
         <div>
-          <Image src={"/icons/shopping-bag.svg"} alt={""} width={12} height={13.5}></Image>
+          <Image
+            src={"/icons/shopping-bag.svg"}
+            alt={""}
+            width={12}
+            height={13.5}
+          ></Image>
 
           <h3>COMPRAR</h3>
         </div>

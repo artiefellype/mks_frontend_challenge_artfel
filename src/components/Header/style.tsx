@@ -9,7 +9,6 @@ export const HeaderContainer = styled.header`
   background-color: var(--default-background);
   color: white;
   padding: 28px 60px;
-  
 `;
 
 export const LogoContainer = styled.div`

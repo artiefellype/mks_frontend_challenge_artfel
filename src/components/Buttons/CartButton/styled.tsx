@@ -13,9 +13,14 @@ export const CartButton = styled.button`
   align-items: center;
   gap: 13px;
 
-  
+  transition: ease-in-out 0.2s;
 
-  p{
+  &:hover {
+    cursor: pointer;
+    background-color: #c5c5c5;
+  }
+
+  p {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;

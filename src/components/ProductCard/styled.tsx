@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
 
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.14);
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 13.5rem;
     height: 17.8rem;
   }
@@ -41,7 +41,7 @@ export const CardProductInfoContainer = styled.div`
 
 export const CardProductTitle = styled.h2`
   max-width: 124px;
-  
+
   overflow-y: hidden;
   color: #2c2c2c;
   font-size: 16px;
@@ -81,7 +81,7 @@ export const CardProductDescription = styled.div`
     text-align: left;
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     max-height: 30px;
     min-height: 28px;
   }
@@ -96,6 +96,12 @@ export const CardShopButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--default-background-hovered);
+  }
 
   div {
     gap: 0.625rem;
@@ -105,12 +111,11 @@ export const CardShopButton = styled.button`
     padding: 8px 0;
 
     h3 {
-        font-style: normal;
-        color: white;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 18px;
+      font-style: normal;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
     }
-
   }
 `;

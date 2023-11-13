@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
-import { GetServerSideProps } from 'next'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import Header from "@/components/Header";
+import { GetServerSideProps } from "next";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function HomeP() {
   return (
@@ -16,7 +16,7 @@ export default function HomeP() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     </>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {

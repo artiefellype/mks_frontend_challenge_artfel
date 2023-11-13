@@ -12,14 +12,13 @@ export const CardProductSpinButtons = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
 
   hr {
     height: 15px;
   }
 
   div {
-    width: 20%;
+    width: 100%;
     display: flex;
     justify-content: center;
     p {
@@ -30,12 +29,19 @@ export const CardProductSpinButtons = styled.div`
 
   button {
     border: none;
-    background-color: transparent;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 20%;
+    width: 100%;
+    height: 100%;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #e1e1e1;
+    }
 
     p {
       font-size: 10px;

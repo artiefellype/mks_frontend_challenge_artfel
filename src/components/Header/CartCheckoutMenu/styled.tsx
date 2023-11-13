@@ -44,6 +44,13 @@ export const CartMenuHeader = styled.div`
     font-size: 24px;
     font-weight: 400;
     line-height: 15px;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #2d2d2d;
+      font-size: 20px;
+    }
   }
 
   h3 {
@@ -62,7 +69,7 @@ export const CartMenuProductsContainer = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,8 +109,10 @@ export const CartMenuBuyButton = styled.button`
   font-weight: 700;
   line-height: 15px;
   background-color: black;
+  transition: ease-in-out 0.2s;
 
   &:hover {
     cursor: pointer;
+    background-color: #2d2d2d;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -32,21 +32,26 @@ export const CardContainer = styled.div`
     line-height: 15px;
   }
 
-
   @media screen and (min-width: 768px) {
     width: 23.75rem;
     height: 5.938rem;
     flex-direction: row;
     padding: 0px 20px;
-
+    transition: ease-in-out 0.2s;
 
     .close-card-button {
-    margin-top: -8px;
-    margin-right: -8px;
-    background-color: black;
-    color: white;
-    font-size: 12px;
-  }
+      margin-top: -8px;
+      margin-right: -8px;
+      background-color: black;
+      color: white;
+      font-size: 12px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #2d2d2d;
+        font-size: 10px;
+      }
+    }
   }
 `;
 
@@ -54,17 +59,17 @@ export const CardProductImgContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-   
+
   img {
     width: 80px;
     height: 95px;
-   }
-   @media screen and (min-width:768px){
+  }
+  @media screen and (min-width: 768px) {
     img {
-    width: 50px;
-    height: 60px;
-   }
-   }
+      width: 50px;
+      height: 60px;
+    }
+  }
 `;
 
 export const CardProductInfoContainer = styled.div`
@@ -81,6 +86,7 @@ export const CardProductTitle = styled.h2`
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
+  padding-bottom: 10px;
 
   @media screen and (min-width: 768px) {
     max-width: 124px;
@@ -120,7 +126,7 @@ export const CardProductPrice = styled.div`
 export const CardProductSpinAndPriceMobileChange = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-`
+  width: 90%;
+`;

@@ -1,11 +1,9 @@
 import React from "react";
 import * as Styled from "./styled";
 import Image from "next/image";
+import { CartButtonProps } from "@/types";
 
-interface CartButtonProps {
-  itensQuantity: number;
-  isOpen: (item: boolean) => void;
-}
+
 function CartButton({ itensQuantity, isOpen }: CartButtonProps) {
   return (
     <Styled.CartButton onClick={() => isOpen(true)}>
