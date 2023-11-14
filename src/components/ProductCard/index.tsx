@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./styled";
 import Image from "next/image";
 import { ProductCardProps } from "@/types";
+import { formatPrice } from "@/utils/Formaters";
 
 
 
@@ -24,7 +25,7 @@ function ProductCard({ product, addToCart }: ProductCardProps) {
           </Styled.CardProductTitle>
           <Styled.CardProductPrice>
             {" "}
-            <p>R${product.price}</p>{" "}
+            <p>{formatPrice(parseFloat(product.price))}</p>{" "}
           </Styled.CardProductPrice>
         </Styled.CardProductInfoContainer>
         <Styled.CardProductDescription>

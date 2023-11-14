@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./styled";
 
-function Footer() {
+function FooterSection() {
   return (
     <Styled.FooterContainer>
       <p>MKS sistemas &copy; Todos os direitos reservados</p>
@@ -9,4 +9,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterSection;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as Styled from "./styled";
 import ProductCartCard from "@/components/ProductCard/ProductCartCard";
 import { CartChekoutMenuProps, ProductProps } from "@/types";
+import { formatPrice } from "@/utils/Formaters";
 
 
 
@@ -30,15 +31,15 @@ function CartCheckoutMenu({
         </Styled.CartMenuHeader>
         <Styled.CartMenuProductsContainer>
           {productList &&
-            productList.map((item) => (
-              <ProductCartCard product={item} removeFromCart={removeFromCart} />
+            productList.map((item, index) => (
+              <ProductCartCard product={item} removeFromCart={removeFromCart} key={index} />
             ))}
         </Styled.CartMenuProductsContainer>
       </Styled.CartMenuTopItems>
       <Styled.CartMenuBottomItems>
         <Styled.CartMenuTotalPrice>
           <h3>Total:</h3>
-          <h3>R${calcTotalPrice(productList)}</h3>
+          <h3>{formatPrice(calcTotalPrice(productList))}</h3>
         </Styled.CartMenuTotalPrice>
         <Styled.CartMenuBuyButton>Finalizar compra</Styled.CartMenuBuyButton>
       </Styled.CartMenuBottomItems>

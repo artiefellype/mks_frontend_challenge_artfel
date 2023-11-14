@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
-  width: 100%;
+export const CardContainer = styled(motion.div)`
+  width:13.75rem;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -13,6 +14,7 @@ export const CardContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  transition: ease-in-out 0.5s;
 
   .close-card-button {
     position: absolute;
@@ -60,7 +62,7 @@ export const CardProductImgContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  img {
+  .imge {
     width: 80px;
     height: 95px;
   }

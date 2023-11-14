@@ -8,7 +8,7 @@ function ProductsSection({ products, addToCart }: ProductsSectionProps) {
     <Styled.Container>
       <Styled.ProductsContainer>
         {products.map((item: ProductProps) => {
-          return <ProductCard product={item} addToCart={addToCart} />;
+          return <ProductCard product={item} addToCart={addToCart} key={item.id}/>;
         })}
       </Styled.ProductsContainer>
     </Styled.Container>

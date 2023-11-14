@@ -4,6 +4,8 @@ import CardSpinButton from "@/components/Buttons/CardSpinButtons";
 import { CartContext } from "@/contexts/CartContext";
 import { motion } from "framer-motion";
 import { ProductCartCardProps } from "@/types";
+import { formatPrice } from "@/utils/Formaters";
+import Image from "next/image";
 
 function ProductCartCard({ product, removeFromCart }: ProductCartCardProps) {
   const { cartProduct, updateQuantity } = useContext(CartContext);
@@ -19,8 +21,8 @@ function ProductCartCard({ product, removeFromCart }: ProductCartCardProps) {
     updateQuantity(id, quantity - 1);
   };
   return (
-    <motion.div
-      initial="hidden"
+    
+      <Styled.CardContainer initial="hidden"
       animate="visible"
       variants={{
         hidden: {
@@ -34,11 +36,16 @@ function ProductCartCard({ product, removeFromCart }: ProductCartCardProps) {
             delay: 0.2,
           },
         },
-      }}
-    >
-      <Styled.CardContainer>
+      }}>
         <Styled.CardProductImgContainer>
-          <img src={photo} alt={"Imagem do produto"} />
+          <Image
+            src={photo}
+            alt={"Imagem do produto"}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="imge"
+          />
         </Styled.CardProductImgContainer>
         <Styled.CardProductInfoContainer>
           <Styled.CardProductTitle>{`${brand} ${name}`}</Styled.CardProductTitle>
@@ -54,7 +61,7 @@ function ProductCartCard({ product, removeFromCart }: ProductCartCardProps) {
           </Styled.CardProductSpinButtonContainer>
           <Styled.CardProductPrice>
             {" "}
-            <p>R${price}</p>{" "}
+            <p>{formatPrice(parseFloat(price))}</p>{" "}
           </Styled.CardProductPrice>
         </Styled.CardProductSpinAndPriceMobileChange>
         <button
@@ -65,7 +72,6 @@ function ProductCartCard({ product, removeFromCart }: ProductCartCardProps) {
           X{" "}
         </button>
       </Styled.CardContainer>
-    </motion.div>
   );
 }
 

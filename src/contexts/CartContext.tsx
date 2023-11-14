@@ -10,7 +10,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartProduct, setCartProducts] = useState<ProductProps[]>([]);
 
   const handleAddCartProducts = (newProduct: ProductProps) => {
-    if (cartProduct.indexOf(newProduct) != -1) {
+    if (cartProduct.some(product => product.id === newProduct.id)) {
       updateQuantity(newProduct.id, newProduct.quantity + 1);
     } else {
       newProduct.quantity = 1;
