@@ -4,7 +4,15 @@ import ProductCartCard from "@/components/ProductCard/ProductCartCard";
 import { CartChekoutMenuProps, ProductProps } from "@/types";
 import { formatPrice } from "@/utils/Formaters";
 
-
+export const calcTotalPrice = (productsInCart: ProductProps[]) => {
+  const totalPrice = productsInCart.reduce(
+    (total: number, product: ProductProps) => {
+      return total + parseFloat(product.price) * product.quantity;
+    },
+    0
+  );
+  return totalPrice;
+};
 
 function CartCheckoutMenu({
   isOpen,
@@ -12,15 +20,7 @@ function CartCheckoutMenu({
   productList,
   removeFromCart,
 }: CartChekoutMenuProps) {
-  const calcTotalPrice = (productsInCart: ProductProps[]) => {
-    const totalPrice = productsInCart.reduce(
-      (total: number, product: ProductProps) => {
-        return total + parseFloat(product.price) * product.quantity;
-      },
-      0
-    );
-    return totalPrice;
-  };
+  
 
   return (
     <Styled.CartMenuContainer data-testid="right-menu" open={isOpen}>

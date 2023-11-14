@@ -9,17 +9,17 @@ function CardSpinButton({
 }: CardSpinButtonProps) {
   return (
     <Styled.CardProductSpinButtons>
-      <button onClick={() => decrease()}>
+      <button data-testid="decrease-button" onClick={() => decrease()}>
         {" "}
         <p>-</p>{" "}
       </button>
       <hr />
       <div>
         {" "}
-        <p>{productQuantity}</p>{" "}
+        <p data-testid="product-quantity" >{productQuantity}</p>{" "}
       </div>
       <hr />
-      <button onClick={() => increase()}>
+      <button data-testid="increase-button" onClick={() => increase()}>
         {" "}
         <p>+</p>{" "}
       </button>
