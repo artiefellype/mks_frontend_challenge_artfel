@@ -24,7 +24,7 @@ function Home() {
         cartProducts={cartProduct || []}
         removeFromCart={handleRemoveCartProducts}
       />
-      {!isLoading ? (data && data.products ? (
+      {!isLoading ? (data && data.products.length != 0 ? (
         <ProductsSection
           products={data.products}
           isLoading={isLoading}

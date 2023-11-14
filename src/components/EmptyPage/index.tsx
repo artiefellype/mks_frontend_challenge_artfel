@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from './styled'
 function EmptyPage() {
   return (
-    <Styled.EmptyPageContainer>
+    <Styled.EmptyPageContainer data-testid="empty-page">
       <div className="icon">😥</div>
       <div className="title">Nada para ver aqui!</div>
       <div className="desc">

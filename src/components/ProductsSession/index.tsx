@@ -5,10 +5,10 @@ import ProductCard from "../ProductCard";
 
 function ProductsSection({ products, addToCart }: ProductsSectionProps) {
   return (
-    <Styled.Container>
+    <Styled.Container data-testid="product-page">
       <Styled.ProductsContainer>
-        {products.map((item: ProductProps) => {
-          return <ProductCard product={item} addToCart={addToCart} key={item.id}/>;
+        {products.map((item: ProductProps, index) => {
+          return <ProductCard product={item} addToCart={addToCart} key={index}/>;
         })}
       </Styled.ProductsContainer>
     </Styled.Container>

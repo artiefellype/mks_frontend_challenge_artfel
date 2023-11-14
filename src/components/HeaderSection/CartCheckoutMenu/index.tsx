@@ -23,7 +23,7 @@ function CartCheckoutMenu({
   };
 
   return (
-    <Styled.CartMenuContainer open={isOpen}>
+    <Styled.CartMenuContainer data-testid="right-menu" open={isOpen}>
       <Styled.CartMenuTopItems>
         <Styled.CartMenuHeader>
           <h3>Carrinho de compras</h3>

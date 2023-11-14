@@ -72,7 +72,11 @@ export const CardProductDescription = styled.div`
   padding: 10px 15px;
   max-height: 45px;
   min-height: 28px;
-  overflow-y: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 1px; 
+  }
 
   p {
     font-size: 10px;

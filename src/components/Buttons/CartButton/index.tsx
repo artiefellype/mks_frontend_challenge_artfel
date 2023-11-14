@@ -6,7 +6,7 @@ import { CartButtonProps } from "@/types";
 
 function CartButton({ itensQuantity, isOpen }: CartButtonProps) {
   return (
-    <Styled.CartButton onClick={() => isOpen(true)}>
+    <Styled.CartButton data-testid="cart-button" onClick={() => isOpen(true)}>
       <Image
         src={"/icons/shopping-cart.svg"}
         alt={"shop cart icon"}

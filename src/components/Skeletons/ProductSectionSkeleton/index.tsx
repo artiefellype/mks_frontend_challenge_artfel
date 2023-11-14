@@ -5,7 +5,7 @@ import { randomInt } from "crypto";
 
 function ProductsSectionSkeleton() {
   return (
-    <Styled.Container>
+    <Styled.Container data-testid="product-section-skeleton">
       <Styled.ProductsContainer>
         {Array(8).fill(null).map((_, index) => index + 1).map((item, index) => {
           return <ProductCardSkeleton key={index}/>;
